@@ -1,0 +1,12 @@
+services:
+  claude-code:
+    build: .
+    container_name: claude-code-container
+    stdin_open: true
+    tty: true
+    volumes:
+      - ~/Sites:/workspace/Sites
+      - ~/MCP:/workspace/MCP
+    working_dir: /workspace
+    environment:
+      - TERM=xterm-256color
